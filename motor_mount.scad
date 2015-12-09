@@ -35,9 +35,9 @@ module ptfe_path(){
         translate ([x, y,-.1])
         cylinder (d=ptfe, h=body_z+.2);
         
-        // cutout using the ptfe as refernce
+        // cutout using the motor mount as refernce
         translate ([body_x/2, 0])
-        cube ([((body_x/2-nema_body/2+motorgap+hob_d1-wall_thick*2)-ptfe), (hob_offy+ptfe/2)*2, body_z*2], center=true);
+        cube ([((nema_body-nema_mount+motorgap+nut)), (hob_offy+ptfe/2)*2, body_z*2], center=true);
         }
 }
 

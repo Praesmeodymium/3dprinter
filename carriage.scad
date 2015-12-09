@@ -9,7 +9,7 @@ difference(){
 union(){
 difference () {    
 cube ([body_x, yb, zb]);
-
+        
 bearings();
 
 weight();
@@ -25,26 +25,21 @@ translate ([0,yb/2+6,8])
 cube ([body_x,2,6]);
 }
 module boltpattern(){
-    for (i= [
-        [ wall_thick+mount_bolt/2, 50, -.1],
-          [body_x-wall_thick-mount_bolt/2, 50, -.1],
-          [wall_thick+mount_bolt/2, 72, -.1],
-          [body_x-wall_thick-mount_bolt/2, 72, -.1],
-          [body_x/2,yb/2+4, -.1]
-    ])
-    {
-        translate(i)
-cylinder (h=20, d=mount_bolt);
-        translate ([body_x/2,yb/2+4, zb/2])
-        cylinder (h=9, d=nut, $fn=6);
-    }
+    translate ([body_x/2, yb/2+4, zb/2-3])
+    cylinder (h=4, d=nut, $fn=6);
+    
+    translate ([body_x/2,yb/2+4, 0])
+    cylinder (h=20, d=mount_bolt, $fn=36);
+    
+    
      for (x=([wall_thick+mount_bolt/2, body_x/2, body_x-wall_thick-mount_bolt/2 ]))
-     for (y=([wall_thick+mount_bolt/2,wall_thick*2+mount_bolt/2+21]))
+     for (y=([wall_thick+mount_bolt/2,wall_thick*2+mount_bolt/2+bearing_h,yb-(wall_thick+mount_bolt/2),yb-(wall_thick*2+mount_bolt/2+bearing_h) ]))
+         
     {
-        
         translate ([x,y, -.1])
         cylinder (h=body_y*2+.2, d=mount_bolt, center=true);
     }
+     
 }
         
 module bearings(){

@@ -2,9 +2,9 @@ include <configuration.scad>;
 cable_holder();
 module cable_holder(){
 //cable loop
-l=30;
+l=20;
 w=30;
-h=12;
+h= 7;//(bolt+wall_thick*2);
 thick=wall_thick;//wall thickness
 bolt=mount_bolt;//size of the boltholes
 difference (){
@@ -15,7 +15,7 @@ difference (){
     translate ([l/2,w/2,h/2])
     rotate ([0,90,0])
     cylinder (d=bolt, h=w+1, center = true);
-    translate([thick,thick,-.1])
-    cube (l-thick*2, w-thick*2, h+.2);
+    translate([l/2, w/2,h/2-.1])
+    cube ([l-thick*2, w-thick*2, h+.2], center = true);
     }
 }

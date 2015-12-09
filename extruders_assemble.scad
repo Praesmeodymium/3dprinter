@@ -14,7 +14,7 @@ translate ([-body_x/2,0,0])
     carriage();
     translate ([0, -20, 37.5])
     belt_tensioner();
-    translate([-15,-50,22.5])
+    translate([-10,-50,22.5])
     cable_holder();
     translate ([body_x/2,25,12])
     rotate([0,0,180])

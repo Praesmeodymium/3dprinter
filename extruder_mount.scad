@@ -5,6 +5,11 @@ translate ([0,-10,0])
 clamp();//uncomment for the clmap and nozzle holder
 local_y=11;
 localz=22;
+module extruder_mount(){
+    base();
+    translate([0,-10,0])
+    clamp();
+}
 module clamp (){  
 difference(){
 front();
@@ -30,7 +35,7 @@ translate ([nut+wall_thick*2,-hotend_dia/2+1, 0])
         translate ([x, y,0])
         cylinder (d=groove, h=groovez);
         translate([x, y, groovez*2+1])
-       cylinder (d=nut, h=2, $fn=6, center=true); 
+       cylinder (d=nut, h=3, $fn=6, center=true); 
 
     }
     translate([body_x/2,0, wall_thick+nut/2])
@@ -63,7 +68,7 @@ for (x=([(body_x/2-nema_body/2-motorgap+hob_d1),(body_x/2+nema_body/2+motorgap-h
         translate ([x, y,0])
         cylinder (d=groove, h=groovez);
         translate([x, y, groovez*2+1])
-       cylinder (d=nut, h=2, $fn=6, center=true); 
+       cylinder (d=nut, h=3, $fn=6, center=true); 
                 translate ([x,0,0])
         cube([hotend_dia, hotend_dia/2-1, groovez*4], center = true);
     }
@@ -87,7 +92,7 @@ for (x=([(body_x/2-nema_body/2-motorgap+hob_d1),(body_x/2+nema_body/2+motorgap-h
             cylinder (h=body_y*2+.2, d=mount_bolt, center=true);
             translate([body_x/2,body_y, wall_thick+nut/2])
             rotate ([90,0,0])
-            cylinder (d=nut, h=3, $fn=6);
+            cylinder (d=nut, h=5, $fn=6);
     }
 }
 module weight(){

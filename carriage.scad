@@ -1,8 +1,10 @@
 yb=75;//local y
-zb=13.5;//[bearing_h/2+wall_thick]//local z
+zb=17.5;//[bearing_h/2+wall_thick]//local z
 
 $fn=36;
 include <configuration.scad>;
+carriage();
+module carriage(){
 difference(){
 union(){
 difference () {    
@@ -132,3 +134,4 @@ cylinder(w+4*pad,r,r,center=true,$fn=smooth);
 }
 
  //b for base
+}

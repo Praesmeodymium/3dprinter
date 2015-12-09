@@ -4,7 +4,7 @@ $fn=36;
 wall_thick=2;// how far holes are from an edge
 
 //motor mount
-body_x=85;//this needs to be 2xmotor size + or larger ~96 for outsid path, and ~85 for inside path
+body_x=96;//this needs to be 2xmotor size + or larger ~96 for outsid path, and ~85 for inside path
 body_y=20;
 body_z=17;
 
